@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/Light.gd" type="Script" id=1]
+[ext_resource path="res://spritesheets/light.png" type="Texture" id=2]
+[ext_resource path="res://spritesheets/items/hud_gem_green.png" type="Texture" id=3]
+
+[node name="GreenLight" type="Light2D"]
+enabled = false
+texture = ExtResource( 2 )
+texture_scale = 4.35
+color = Color( 0.505882, 0.823529, 0.364706, 1 )
+energy = 1.5
+mode = 2
+shadow_enabled = true
+script = ExtResource( 1 )
+col = "green"
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
