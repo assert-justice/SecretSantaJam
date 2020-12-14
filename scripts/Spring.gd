@@ -9,9 +9,12 @@ func set_active():
 	$Down.visible = active
 
 func _on_Spring_body_entered(body):
-	body.call("set_velocity", Vector2(0, -velocity))
-	bodies += 1
-	set_active()
+	if body.has_method("set_velocity"):
+		var vec = Vector2(0, -velocity)
+		vec = global_transform.xform(vec) - position
+		body.call("set_velocity", vec)
+		bodies += 1
+		set_active()
 
 func _on_Spring_body_exited(body):
 	bodies -= 1

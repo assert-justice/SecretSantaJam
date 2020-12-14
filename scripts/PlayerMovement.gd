@@ -9,6 +9,7 @@ export (int) var max_jumps = 1
 export (int) var fire_cooldown = 4
 export (PackedScene) var bullet_scene
 export (int) var num_bullets = 1
+export var airControl = 0.1
 
 #var bullet_scene = load("res://Bullet.tscn")
 var velocity = Vector2()
@@ -19,6 +20,7 @@ var is_grounded = false
 var facing = false
 var fire_timer = 0
 var space_state = null
+var launched = false
 
 func probe_check():
 	space_state = get_world_2d().direct_space_state
@@ -54,16 +56,23 @@ func fire_control():
 		
 func set_velocity(vel):
 	velocity = vel
+	jumps = max_jumps
+	launched = true
 
 func get_input():
+	var vel = Vector2()
 	if Input.is_action_pressed('right'):
-		velocity.x = speed
+		vel.x = speed
 		facing = false
 	elif Input.is_action_pressed('left'):
-		velocity.x = -speed
+		vel.x = -speed
 		facing = true
+	if is_grounded:
+		launched = false
+	if launched:
+		velocity.x += vel.x * airControl
 	else:
-		velocity.x = 0
+		velocity.x = vel.x
 	if Input.is_action_pressed("jump"):
 		velocity.y += low_gravity
 	else:

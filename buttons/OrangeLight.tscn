@@ -10,7 +10,6 @@ texture = ExtResource( 2 )
 texture_scale = 4.35
 color = Color( 0.917647, 0.47451, 0.180392, 1 )
 energy = 1.5
-mode = 2
 shadow_enabled = true
 script = ExtResource( 1 )
 col = "orange"

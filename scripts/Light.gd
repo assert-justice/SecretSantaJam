@@ -16,3 +16,4 @@ func remove_weight():
 
 func _ready():
 	add_to_group(col)
+	add_to_group("light")
