@@ -15,7 +15,10 @@ animations = [ {
 "speed": 3.0
 } ]
 
-[node name="Snail" type="KinematicBody2D"]
+[node name="Snail" type="KinematicBody2D" groups=[
+"snail",
+]]
+input_pickable = true
 collision_layer = 2
 script = ExtResource( 3 )
 
@@ -25,4 +28,6 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
+frame = 1
 playing = true
+[connection signal="input_event" from="." to="." method="_on_Snail_input_event"]

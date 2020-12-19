@@ -58,6 +58,7 @@ func set_velocity(vel):
 	velocity = vel
 	jumps = max_jumps
 	launched = true
+	position.y -= 100
 
 func get_input():
 	var vel = Vector2()
@@ -70,6 +71,7 @@ func get_input():
 	if is_grounded:
 		launched = false
 	if launched:
+		#pass
 		velocity.x += vel.x * airControl
 	else:
 		velocity.x = vel.x
@@ -92,6 +94,7 @@ func get_input():
 		if coyote_timer == 0:
 			jumps -= 1
 		velocity.y = -jumpPower
+		launched = false
 		
 func handle_pushing(_delta):
 	if velocity.x != 0:

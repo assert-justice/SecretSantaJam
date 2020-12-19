@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label"]
+margin_left = 276.231
+margin_top = 79.0488
+margin_right = 451.231
+margin_bottom = 110.049
+rect_scale = Vector2( 3, 3 )
+custom_styles/normal = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "You can hold down the left 
+mouse button to lure bees!"
+__meta__ = {
+"_edit_use_anchors_": false
+}

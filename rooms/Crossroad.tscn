@@ -1,0 +1,186 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://spritesheets/background.png" type="Texture" id=1]
+[ext_resource path="res://Door.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Text.tscn" type="PackedScene" id=3]
+[ext_resource path="res://LabelDisplay.tscn" type="PackedScene" id=4]
+[ext_resource path="res://spritesheets/paper.png" type="Texture" id=5]
+[ext_resource path="res://buttons/BlueButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://buttons/BlueBlock.tscn" type="PackedScene" id=7]
+[ext_resource path="res://buttons/OrangeBlock.tscn" type="PackedScene" id=8]
+[ext_resource path="res://buttons/OrangeButton.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Box.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Dot.tscn" type="PackedScene" id=12]
+[ext_resource path="res://spritesheets/tiles_spritesheet.png" type="Texture" id=15]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( 0, 0, 72, 0, 72, 72, 0, 72 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 0, 0, 72, 0, 72, 72, 0, 72 )
+
+[sub_resource type="OccluderPolygon2D" id=3]
+polygon = PoolVector2Array( 0, 0, 72, 0, 72, 72, 0, 72 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 0, 0, 72, 0, 72, 72, 0, 72 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 0, 0, 72, 0, 72, 72, 0, 72 )
+
+[sub_resource type="TileSet" id=6]
+0/name = "tiles_spritesheet.png 0"
+0/texture = ExtResource( 15 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 216, 0, 72, 72 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/occluder = SubResource( 1 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 2 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "tiles_spritesheet.png 1"
+1/texture = ExtResource( 15 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 216, 72, 72, 72 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/occluder = SubResource( 3 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 4 )
+1/shape_one_way = true
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+
+[node name="TestRoom" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 2091.0
+margin_bottom = 1221.0
+texture = ExtResource( 1 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Door2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2.71906, 1073.79 )
+doorName = "b"
+roomName = "BeeIntro"
+destName = "a"
+
+[node name="Door3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 576.347, 2.34781 )
+doorName = "c"
+roomName = "Tower1"
+destName = "a"
+
+[node name="StartChunk" type="TileMap" parent="."]
+tile_set = SubResource( 6 )
+cell_size = Vector2( 72, 72 )
+collision_friction = 0.0
+format = 1
+tile_data = PoolIntArray( -327661, 0, 0, -327660, 0, 0, -327659, 0, 0, -327658, 0, 0, -262125, 0, 0, -262122, 0, 0, -196589, 0, 0, -196586, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -131053, 0, 0, -131050, 0, 0, -65530, 0, 0, -65527, 0, 0, -65517, 0, 0, -65514, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65564, 0, 0, 65565, 0, 0, 65566, 0, 0, 196606, 0, 0, 131102, 0, 0, 262142, 0, 0, 196638, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 262160, 0, 0, 262161, 0, 0, 262170, 0, 0, 262171, 0, 0, 262172, 0, 0, 262173, 0, 0, 262174, 0, 0, 327680, 0, 0, 327708, 0, 0, 393216, 0, 0, 393244, 0, 0, 458752, 0, 0, 458780, 0, 0, 524288, 0, 0, 524316, 0, 0, 589824, 0, 0, 589852, 0, 0, 655360, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655388, 0, 0, 720896, 0, 0, 720924, 0, 0, 786432, 0, 0, 786460, 0, 0, 917502, 0, 0, 917503, 0, 0, 851968, 0, 0, 851996, 0, 0, 983038, 0, 0, 917532, 0, 0, 1048574, 0, 0, 983068, 0, 0, 1114110, 0, 0, 1114111, 0, 0, 1048576, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1048600, 0, 0, 1048601, 0, 0, 1048602, 0, 0, 1048603, 0, 0, 1048604, 0, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 10 )]
+position = Vector2( 161.897, 228.394 )
+speed = 600
+jumpPower = 1500
+coyote_time = 15
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 1037.05, 614.355 )
+current = true
+zoom = Vector2( 2, 2 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color( 0.541176, 0.541176, 0.541176, 1 )
+
+[node name="Dot" parent="." instance=ExtResource( 12 )]
+aquired = true
+
+[node name="Door" parent="." instance=ExtResource( 2 )]
+position = Vector2( -6.10352e-05, 214.96 )
+doorName = "a"
+roomName = "Start"
+destName = "a"
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1111.22, 1054.22 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="Label" parent="." instance=ExtResource( 3 )]
+visible = false
+margin_left = 855.0
+margin_top = 836.0
+margin_right = 1020.0
+margin_bottom = 867.0
+text = "Turns out you can double 
+jump! Who knew?"
+
+[node name="LabelDisplay" parent="Label" instance=ExtResource( 4 )]
+position = Vector2( 86.8017, 75.317 )
+scale = Vector2( 0.666667, 0.666667 )
+
+[node name="BlueBlock" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1508.25, 36.3859 )
+scale = Vector2( 2, 1 )
+
+[node name="BlueButton" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1512.15, -107.514 )
+
+[node name="BlueButton2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1508.97, -40.8433 )
+
+[node name="Door4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1508.97, -215.458 )
+doorName = "d"
+roomName = "Test1"
+destName = "b"
+
+[node name="OrangeBlock" parent="." instance=ExtResource( 8 )]
+position = Vector2( 569.229, 327.434 )
+scale = Vector2( 3, 1 )
+
+[node name="OrangeButton" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1477.22, 692.536 )
+
+[node name="Box" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1477.22, 600.467 )
+
+[node name="Door5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2089.96, 219.491 )
+doorName = "e"
+roomName = "Trial1"
+destName = "a"

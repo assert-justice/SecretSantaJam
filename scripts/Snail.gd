@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 export var speed = 120
 export var gravity = 100
+
 var facing = false
 
 var velocity = Vector2()
@@ -13,7 +14,7 @@ func set_velocity(vel):
 func _physics_process(delta):
 	space_state = get_world_2d().direct_space_state
 	#var probe = self.position + Vector2.DOWN * 60
-	var probe = global_transform.xform(Vector2.DOWN * 60)
+	var probe = global_transform.xform(Vector2.DOWN * 40)
 	#print(probe - position)
 	#var offset = Vector2.RIGHT * 60
 	var offset = (global_transform.xform(Vector2.RIGHT) - position) * 60
@@ -46,5 +47,6 @@ func _physics_process(delta):
 		$AnimatedSprite.flip_h = facing
 	else:
 		pass
-		#velocity.y += hspeed + gravity
+		velocity.y += hspeed + gravity
 	move_and_slide(velocity)
+

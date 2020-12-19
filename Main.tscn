@@ -2,7 +2,10 @@
 
 [ext_resource path="res://scripts/GameManager.gd" type="Script" id=1]
 
-[node name="GameManager" type="Node2D"]
+[node name="GameManager" type="Node2D" groups=[
+"gameManager",
+]]
 script = ExtResource( 1 )
+startRoom = "Start"
 
 [node name="MainMenu" type="Node2D" parent="."]
