@@ -15,6 +15,7 @@ func _on_Spring_body_entered(body):
 		body.call("set_velocity", vec)
 		bodies += 1
 		set_active()
+		$Bounce.play()
 
 func _on_Spring_body_exited(body):
 	bodies -= 1

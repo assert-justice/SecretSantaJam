@@ -72,7 +72,12 @@ func get_input():
 		launched = false
 	if launched:
 		#pass
-		velocity.x += vel.x * airControl
+		if velocity.x > speed and vel.x > 0:
+			pass
+		elif velocity.x < -speed and vel.x < 0:
+			pass
+		else:
+			velocity.x += vel.x * airControl
 	else:
 		velocity.x = vel.x
 	if Input.is_action_pressed("jump"):
@@ -94,6 +99,7 @@ func get_input():
 		if coyote_timer == 0:
 			jumps -= 1
 		velocity.y = -jumpPower
+		$Jump.play()
 		launched = false
 		
 func handle_pushing(_delta):

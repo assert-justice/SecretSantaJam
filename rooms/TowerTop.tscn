@@ -151,16 +151,17 @@ position = Vector2( 579.797, 1255.04 )
 
 [node name="Label" parent="." instance=ExtResource( 6 )]
 visible = false
-margin_left = 69.2996
+margin_left = 88.8993
 margin_top = 462.917
-margin_right = 199.3
+margin_right = 218.899
 margin_bottom = 493.917
-text = "Left click on a slug 
+text = "Right click on a slug 
 to launch towards it!"
 
 [node name="LabelDisplay" parent="Label" instance=ExtResource( 7 )]
-position = Vector2( 62.5957, 83.8915 )
+position = Vector2( 53.6867, 85.0794 )
 scale = Vector2( 0.5, 0.5 )
+muted = true
 
 [node name="BlueButton3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 584.554, 1466.71 )
@@ -184,8 +185,8 @@ position = Vector2( 1082.01, 107.76 )
 rotation = 3.14159
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 254.797, 712.719 )
+position = Vector2( 249.452, 719.846 )
 texture = ExtResource( 11 )
 
 [node name="Powerup" parent="Sprite" instance=ExtResource( 8 )]
-position = Vector2( -3.56354, 1.78165 )
+position = Vector2( 6.10352e-05, 1.78171 )

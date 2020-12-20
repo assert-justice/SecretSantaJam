@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/GameManager.gd" type="Script" id=1]
+[ext_resource path="res://sfx/sweet_ice.ogg" type="AudioStream" id=2]
+[ext_resource path="res://sfx/club.ogg" type="AudioStream" id=3]
 
 [node name="GameManager" type="Node2D" groups=[
 "gameManager",
@@ -9,3 +11,10 @@ script = ExtResource( 1 )
 startRoom = "Start"
 
 [node name="MainMenu" type="Node2D" parent="."]
+
+[node name="MainMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+autoplay = true
+
+[node name="Club" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )

@@ -7,17 +7,31 @@ var powers = {}
 
 func _ready():
 	scene_res = load('res://rooms/' + startRoom + '.tscn')
+	#powers["magnet"] = true
+	load_scene()
+	
+func win():
+	$MainMusic.stop()
+	$Club.play()
+	
+func load_scene():
+	if scene != null:
+		remove_child(scene)
+		scene.queue_free()
 	scene = scene_res.instance()
 	add_child(scene)
-	#add_power("magnet")
+	apply_powers()
+	var powerups = get_tree().get_nodes_in_group("powerup")
+	for p in powerups:
+		if p.power in powers:
+			p.get_parent().queue_free()
+	if not $MainMusic.playing:
+		$MainMusic.play()
+		$Club.stop()
 	
 func _physics_process(delta):
 	if Input.is_action_just_released("reset"):
-		remove_child(scene)
-		scene.queue_free()
-		scene = scene_res.instance()
-		add_child(scene)
-		apply_powers()
+		load_scene()
 		
 func add_power(power):
 	powers[power] = true
@@ -32,18 +46,14 @@ func apply_powers():
 
 func use_door(room, door):
 	print("traveling to room ", room, " door ", door)
-	remove_child(scene)
-	scene.queue_free()
 	scene_res = load('res://rooms/' + room + '.tscn')
 	if scene_res == null:
 		print(room, "does not exist!")
 	else:
-		scene = scene_res.instance()
-		add_child(scene)
+		load_scene()
 		var doors = get_tree().get_nodes_in_group('door')
 		var player = get_tree().get_nodes_in_group('player')[0]
 		for d in doors:
 			if d.doorName == door:
 				player.position = d.position
 		print("travel completed")
-		apply_powers()

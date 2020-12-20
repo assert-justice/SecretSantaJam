@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/club.ogg-400979bac316b8b228f3b902d48a0b4c.oggstr"
+
+[deps]
+
+source_file="res://sfx/club.ogg"
+dest_files=[ "res://.import/club.ogg-400979bac316b8b228f3b902d48a0b4c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

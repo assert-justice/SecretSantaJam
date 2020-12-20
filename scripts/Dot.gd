@@ -34,6 +34,7 @@ func launch():
 	target.add_child(spinner)
 	spinner.position = Vector2()
 	if Input.is_action_just_pressed("grapple"):
+		$Launch.play()
 		var player = get_tree().get_nodes_in_group("player")[0]
 		player.set_velocity( (position - player.position).normalized() * launch_power)
 		
@@ -49,6 +50,10 @@ func hold():
 	if not can_lure:
 		return
 	enabled = aquired and Input.is_action_pressed("laser")
+	if Input.is_action_just_pressed("laser"):
+		$Lure.play()
+	if Input.is_action_just_released("laser"):
+		$Lure.stop()
 	$Star.visible = enabled
 
 func _ready():

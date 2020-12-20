@@ -129,6 +129,9 @@ position = Vector2( 322.809, 1117.54 )
 [node name="OrangeButton3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 394.853, 1117.54 )
 
+[node name="OrangeButton4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2119.66, 253.023 )
+
 [node name="Door" parent="." instance=ExtResource( 4 )]
 position = Vector2( -5.62451, 214.882 )
 doorName = "a"
